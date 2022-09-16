@@ -570,9 +570,9 @@ if (WIN32)
   find_library(Caffe_Proto_LIB_RELEASE caffeproto HINTS ${Caffe_LIBS})
   find_library(Caffe_LIB_DEBUG caffe-d HINTS ${Caffe_LIBS})
   find_library(Caffe_Proto_LIB_DEBUG caffeproto-d HINTS ${Caffe_LIBS})
-
-  set(Caffe_LIBS_RELEASE "${Caffe_LIB_RELEASE};${Caffe_Proto_LIB_RELEASE}")
-  set(Caffe_LIBS_DEBUG "${Caffe_LIB_DEBUG};${Caffe_Proto_LIB_DEBUG}")
+  
+  # set(Caffe_LIBS_RELEASE "${Caffe_LIB_RELEASE};${Caffe_Proto_LIB_RELEASE}")
+  # set(Caffe_LIBS_DEBUG "${Caffe_LIB_DEBUG};${Caffe_Proto_LIB_DEBUG}")
   set(Caffe_FOUND 1)
 
 endif (WIN32)
@@ -731,7 +731,8 @@ include_directories(
   ${Protobuf_INCLUDE_DIRS}
   ${GFLAGS_INCLUDE_DIR}
   ${GLOG_INCLUDE_DIR}
-  ${OpenCV_INCLUDE_DIRS})
+  ${OpenCV_INCLUDE_DIRS}
+  ${OpenBLAS_INCLUDE_DIRS})
 
 if (USE_ASIO)
   include_directories(${CMAKE_SOURCE_DIR}/3rdparty/asio/include/)
